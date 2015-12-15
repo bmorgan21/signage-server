@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>WebSockets - Simple chat</title>
+
+        <style>
+
+        .footer {
+            bottom:0;
+            position:fixed;
+            z-index:150;
+            _position:absolute;
+            _top:expression(eval(document.documentElement.scrollTop+
+              (document.documentElement.clientHeight-this.offsetHeight)));
+            height:35px;
+            background-color:white;
+            width:100%;
+            padding:5px 10px;
+        }
+        .footer i.glyphicon-flash {
+          color:green;
+        }
+        .footer i.glyphicon-remove {
+          color:red;
+        }
+        #status-right {
+           float:right;
+        }
+        </style>
+
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+        <meta http-equiv="refresh" content="300">
+    </head>
+    <body>
+        <div id="content">
+        </div>
+
+
+        <footer class="footer">
+            <span id="status">
+                <i class="glyphicon glyphicon-option-horizontal"></i>
+                <span class="text"></span>
+            </span>
+            <span id="status-right"></span>
+        </footer>
+
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title"></h4>
+                    </div>
+                    <div class="modal-body">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+        <script src="static/js/reconnecting-websocket.min.js"></script>
+        <script src="static/js/moment.min.js"></script>
+        <script src="static/js/frontend.js"></script>
+    </body>
+</html>
