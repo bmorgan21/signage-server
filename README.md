@@ -18,16 +18,12 @@ curl -H "Content-Type: application/json" -X POST -d '{"package": "system", "type
 
 sudo apt-get install python-pip
 
-# screen setup
-sudo apt-get install chromium
 
-To get Chromium to autostart follow these instructions
+# set up screen
+sudo apt-get install xautomation
 
-Type "sudo nano /etc/xdg/lxsession/LXDE-pi/autostart"
-Add the following line: /usr/bin/chromium --kiosk --ignore-certificate-errors --disable-restore-session-state "http://10.34.101.178:8080/?id=all.engineering.cod-magic"
-Press Ctrl-X
-Press "Y"
-Press "Enter"
+@epiphany-browser "10.34.101.178:8080/?id=all.engineering.firecat"
+@xte "sleep 15" "key F11"
 
 # prevent monitor from sleeping (https://www.raspberrypi.org/forums/viewtopic.php?f=91&t=57552)
 sudo apt-get install xscreensaver
