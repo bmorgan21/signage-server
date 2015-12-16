@@ -54,7 +54,7 @@ var handleMessage = function(message) {
 
             var keys = {};
 
-            if (location != 'modal') {
+            if (location != 'modal' && location != 'system') {
                 history.push(obj);
                 var key = objectKey(obj);
 
