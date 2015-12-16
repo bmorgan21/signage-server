@@ -32,3 +32,6 @@ disable screen saver
 
 # set timezone correctly here
 https://www.raspberrypi.org/documentation/configuration/raspi-config.md
+
+# disable overscan
+http://www.webtechgadgetry.com/make-raspberry-pi-use-full-resolution-monitor/
