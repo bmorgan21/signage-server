@@ -95,6 +95,10 @@ $(function () {
                 }, delay * 1000);
             } else if (location == 'status_right') {
                 status_right.html(message);
+            } else if (location == 'system') {
+                if (message == 'reload') {
+                    document.location.reload();
+                }
             } else {
                 content.html(message);
                 status_text.html('Updated ' + moment(dt).format('MMMM Do YYYY, h:mm:ss a'));
