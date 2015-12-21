@@ -25,13 +25,17 @@ sudo apt-get install supervisor
 command = /usr/local/bin/node server.js
 directory = /home/pi/code/signage-server
 
+sudo nano /etc/modprobe.d/8192cu.conf
+
+# Disable power management
+options 8192cu rtw_power_mgnt=0 rtw_enusbss=0
 
 
 # set up screen
 sudo apt-get install xautomation
 
 @epiphany-browser "10.34.101.178:8080/?id=all.engineering.firecat"
-@xte "sleep 15" "key F11"
+@xte "sleep 15" "key F11" "mousemove 0 0"
 
 # prevent monitor from sleeping (https://www.raspberrypi.org/forums/viewtopic.php?f=91&t=57552)
 sudo apt-get install xscreensaver
