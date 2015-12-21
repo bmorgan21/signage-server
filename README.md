@@ -18,6 +18,14 @@ curl -H "Content-Type: application/json" -X POST -d '{"package": "system", "type
 
 sudo apt-get install python-pip
 
+sudo apt-get install supervisor
+
+# /etc/supervisor/conf.d/signage-server.conf
+[program:server]
+command = /usr/local/bin/node server.js
+directory = /home/pi/code/signage-server
+
+
 
 # set up screen
 sudo apt-get install xautomation
