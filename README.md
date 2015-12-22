@@ -30,6 +30,29 @@ sudo nano /etc/modprobe.d/8192cu.conf
 # Disable power management
 options 8192cu rtw_power_mgnt=0 rtw_enusbss=0
 
+sudo su
+
+nano /root/wifi_recover.sh
+
+keepalive_host='10.34.101.1'
+
+ping -q -c1 $keepalive_host >> /dev/null
+
+if [ "$?" -ne "0" ]; then
+        echo "`date` WIFI DOWN" >> wifi_log.txt
+        ifdown wlan0
+        rmmod 8192cu
+        modprobe 8192cu
+        ifup wlan0
+        echo "`date` WIFI UP" >> wifi_log.txt
+fi
+
+
+chmod +x wifi_recover.sh
+
+crontab -e
+
+*/5 * * * * /root/wifi_recover.sh
 
 # set up screen
 sudo apt-get install xautomation
